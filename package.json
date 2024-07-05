@@ -1,0 +1,34 @@
+{
+  "name": "api",
+  "version": "0.0.1",
+  "description": "a simple api in exress",
+  "main": "src/index.mjs",
+  "type": "module",
+  "scripts": {
+    "test": "npm run test",
+    "start": "nodemon src/index.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LeonardoSidney/express-api-test.git"
+  },
+  "keywords": [
+    "api",
+    "express",
+    "docker-compose",
+    "docker",
+    "nodemon"
+  ],
+  "author": "Leonardo da Silva",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/LeonardoSidney/express-api-test/issues"
+  },
+  "homepage": "https://github.com/LeonardoSidney/express-api-test#readme",
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
