@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "test": "npm run test",
-    "start": "nodemon src/index.mjs"
+    "start": "nodemon src/index.mjs",
+    "migrate:create": "node vendor/migrations/CreateMigrations.mjs"
   },
   "repository": {
     "type": "git",
@@ -29,6 +30,7 @@
     "nodemon": "^3.1.4"
   },
   "dependencies": {
-    "express": "^4.19.2"
+    "express": "^4.19.2",
+    "mongoose": "^8.4.5"
   }
 }
