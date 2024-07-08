@@ -1,4 +1,4 @@
-import Migrations from "./Migrations.mjs"
+import Migrations from './Migrations.mjs'
 import fs from 'fs'
 
 class CreateMigration extends Migrations {

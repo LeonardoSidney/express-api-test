@@ -10,7 +10,6 @@ build/
 *.sublime-project
 *.sublime-workspace
 
-logs/
 *.log
 
 package-lock.json

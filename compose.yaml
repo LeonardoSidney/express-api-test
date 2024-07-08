@@ -8,8 +8,10 @@ services:
     environment:
       - NODE_ENV=development
       - PORT=3000
-      - MONGO_URI=mongodb://admin:supersecretpassword@mongo-express-test:27017/api
-      - NODE_PATH=./src
+      - MONGO_URI=mongodb://admin:supersecretpassword@mongo-express-test:27017/?authMechanism=DEFAULT  
+      - NODE_PATH=./
+    depends_on:
+      - mongo-express-test
   mongo-express-test:
     image: mongo
     ports:
