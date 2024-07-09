@@ -35,6 +35,7 @@ class RouteLoader {
                         this.app[route.method](route.route, SchemaMiddleware.validate.bind(SchemaMiddleware.validate,route.validate), route.handler.bind(route.handler))
                     }
                 } catch (error) {
+                    console.error(error)
                     Logger.error(`Error loading route: ${filepath}`, error)
                 }
             }
