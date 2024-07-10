@@ -2,7 +2,7 @@ class Logger {
     static info (...messages) {
         const datetime = new Date().toISOString()
         const combinedMessages = messages.map(message => JSON.stringify(message)).join(' ')
-        console.dir(`LOG INFO :: ${datetime} :: ${combinedMessages}`, { depth: null, colors: true })
+        console.log(`LOG INFO :: ${datetime} :: ${combinedMessages}`)
     }
 
     static error (...messages) {

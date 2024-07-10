@@ -1,5 +1,7 @@
 import Logger from '../helpers/logs/Logger.mjs'
 import Migrations from './Migrations.mjs'
+import { up } from '../../src/domain/databases/mongodb/migrations/20240705235222-catalog.mjs'
+import CatalogModel from '../../src/domain/databases/mongodb/models/catalog.mjs'
 
 class UpMigrations extends Migrations {
     constructor () {
@@ -9,6 +11,7 @@ class UpMigrations extends Migrations {
 
     async up () {
         Logger.info('Running migrations...')
+        await up(CatalogModel)
     }
 }
 
