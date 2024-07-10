@@ -10,5 +10,12 @@ export default [
         handler: cartController.createCart,
         validate: cartSchema.createCartSchema,
         middlewares: []
+    },
+    {
+        method: 'put',
+        route: '/cart/:id/add-item',
+        handler: cartController.addItem,
+        validate: cartSchema.addItemSchema,
+        middlewares: []
     }
 ]
