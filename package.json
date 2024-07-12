@@ -5,7 +5,7 @@
   "main": "src/index.mjs",
   "type": "module",
   "scripts": {
-    "test": "npm run test",
+    "test": "npx mocha",
     "start": "nodemon src/index.mjs",
     "migrate:create": "node vendor/migrations/CreateMigrations.mjs",
     "migrate:up": "node vendor/migrations/UpMigrations.mjs",
@@ -29,7 +29,10 @@
   },
   "homepage": "https://github.com/LeonardoSidney/express-api-test#readme",
   "devDependencies": {
-    "nodemon": "^3.1.4"
+    "chai": "^5.1.1",
+    "mocha": "^10.6.0",
+    "nodemon": "^3.1.4",
+    "sinon": "^18.0.0"
   },
   "dependencies": {
     "express": "^4.19.2",
