@@ -1,6 +1,6 @@
 import express from 'express'
 import Logger from '../vendor/helpers/logs/Logger.mjs'
-import Mongoose from './domain/databases/mongodb/Mongoose.mjs'
+import Mongoose from './infra/databases/mongodb/Mongoose.mjs'
 import Router from './interfaces/http/Router.mjs'
 
 const {

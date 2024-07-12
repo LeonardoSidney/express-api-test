@@ -1,4 +1,4 @@
-import MongooseConnector from '../../src/domain/databases/mongodb/Mongoose.mjs'
+import MongooseConnector from '../../src/infra/databases/mongodb/Mongoose.mjs'
 
 const { MONGO_URI } = process.env
 
@@ -6,7 +6,7 @@ class Migrations {
     constructor () {
         this.mongoUri = MONGO_URI
         this.options = {}
-        this.migrationsDir = 'src/domain/databases/mongodb/migrations'
+        this.migrationsDir = 'src/infra/databases/mongodb/migrations'
         this.changelogCollectionName = 'changelog'
     }
 
