@@ -1,11 +1,13 @@
 import Logger from '../../../../vendor/helpers/logs/Logger.mjs'
-import findItemCatalogService from '../../services/Cart/findItemCatalogService.mjs'
-import createCartMapperService from '../../services/Cart/createCartMapperService.mjs'
-import createCartService from '../../services/Cart/createCartService.mjs'
-import cartStoreService from '../../services/Cart/cartStoreService.mjs'
-import findCartService from '../../services/Cart/findCartService.mjs'
-import addItemToCartService from '../../services/Cart/addItemToCartService.mjs'
-import cartUpdateService from '../../services/Cart/cartUpdateService.mjs'
+import findItemCatalogService from '../../services/cart/findItemCatalogService.mjs'
+import createCartMapperService from '../../services/cart/createCartMapperService.mjs'
+import createCartService from '../../services/cart/createCartService.mjs'
+import cartStoreService from '../../services/cart/cartStoreService.mjs'
+import findCartService from '../../services/cart/findCartService.mjs'
+import addItemToCartService from '../../services/cart/addItemToCartService.mjs'
+import cartUpdateService from '../../services/cart/cartUpdateService.mjs'
+import sumCartItensValueService from '../../services/cart/sumCartItensValueService.mjs'
+import removeItemFromCartService from '../../services/cart/removeItemFromCartService.mjs'
 
 class CartOperation {
     async createCart (body) {
@@ -28,6 +30,28 @@ class CartOperation {
         }
 
         cart = addItemToCartService(item, cart)
+        
+        cart.total = sumCartItensValueService(cart)
+
+        await cartUpdateService(cart)
+
+        return cart
+    }
+    async removeItem (id, body) {
+        Logger.info('CartOperation :: removeItem :: ', id, body)
+        let cart = await findCartService(id)
+        if (!cart) {
+            return { message: 'Cart not found' }
+        }
+
+        const item = await findItemCatalogService(body)
+        if (!item) {
+            return { message: 'Item not found' }
+        }
+
+        cart = removeItemFromCartService(item, cart)
+        
+        cart.total = sumCartItensValueService(cart)
 
         await cartUpdateService(cart)
 

@@ -9,4 +9,8 @@ export default {
         productId: joi.string().required(),
         quantity: joi.number().default(1),
     }),
+    removeItemSchema: joi.object({}).keys({
+        sessionId: joi.string().required(),
+        productId: joi.string().required(),
+    }),
 }

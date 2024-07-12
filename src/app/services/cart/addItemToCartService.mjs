@@ -3,7 +3,6 @@ export default (item, cart) => {
     if (cart.items.length === 0) {
         item.quantity = 1
         cart.items = [item]
-        cart.total = item.price
         return cart
     }
 
@@ -11,12 +10,10 @@ export default (item, cart) => {
     if (itemIndex === -1) {
         item.quantity = 1
         cart.items.push(item)
-        cart.total += item.price
         return cart
     }
 
     cart.items[itemIndex].quantity += 1
-    cart.total += item.price
 
     return cart
 }

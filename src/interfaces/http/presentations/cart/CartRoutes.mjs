@@ -17,5 +17,12 @@ export default [
         handler: cartController.addItem,
         validate: cartSchema.addItemSchema,
         middlewares: []
-    }
+    },
+    {
+        method: 'put',
+        route: '/cart/:id/remove-item',
+        handler: cartController.removeItem,
+        validate: cartSchema.removeItemSchema,
+        middlewares: []
+    },
 ]
